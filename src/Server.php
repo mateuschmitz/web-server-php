@@ -29,7 +29,7 @@ class Server
             $file = $this->getFileRequested($requestExplode[0]);
 
 
-            // echo "<pre>" . print_r($requestExplode, 1);
+            echo "<pre>" . print_r($file, 1);
             // echo "<pre>" . print_r($requestExplode[0], 1);
 
     // $incoming = array();
@@ -75,6 +75,12 @@ class Server
 
     private function getFileRequested($stringLine)
     {
-        // echo "<pre>" . print_r($stringLine, 1);
+        $explodeStringLine = explode(" ", $stringLine);
+        
+        $fileRequested = (isset($explodeStringLine[1]))
+            ? $explodeStringLine[1]
+            : "/";
+
+        
     }
 }
